@@ -97,7 +97,6 @@ type ExternalSegment struct {
 	// external metrics and the "component" span attribute.  It should be
 	// the framework making the external call.
 	Library string
-
 	// statusCode is the status code for the response.  This value takes
 	// precedence over the status code set on the Response.
 	statusCode *int
@@ -248,7 +247,7 @@ func (s *ExternalSegment) SetStatusCode(code int) {
 
 // outboundHeaders returns the headers that should be attached to the external
 // request.
-func (s *ExternalSegment) outboundHeaders() http.Header {
+func (s *ExternalSegment) OutboundHeaders() http.Header {
 	return outboundHeaders(s)
 }
 
